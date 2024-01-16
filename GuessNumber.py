@@ -14,12 +14,28 @@ print(display_word)
 guess = input('Guess a letter?\n').lower()
 print(guess) 
 
-for position in range(len(secret_word)):
-    letter = secret_word[position]
-    if letter == guess:
-        display_word[position] = letter
-    else:
-        print('Letter not in word')
-print(display_word)
+num = 0
+game_over = False
+
+while not game_over:
+    guess = input('Guess a letter?\n').lower()
+    for position in range(len(secret_word)):
+        letter = secret_word[position]
+        if letter == guess:
+            display_word[position] = letter
+    if guess not in secret_word:
+        num += 1
+        if num >= 5:
+            print('You lose')
+            game_over = True
+    print(display_word)
+
+    if '-' not in display_word:
+        print('You Win')
+        game_over = True
+
+         
+
+
 
 
