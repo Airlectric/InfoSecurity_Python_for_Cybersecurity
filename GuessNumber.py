@@ -25,6 +25,8 @@ while not game_over:
             display_word[position] = letter
     if guess not in secret_word:
         num += 1
+        guesses_left = 5 - num
+        print(f'You have {guesses_left} guesses left')
         if num >= 5:
             print('You lose')
             game_over = True
