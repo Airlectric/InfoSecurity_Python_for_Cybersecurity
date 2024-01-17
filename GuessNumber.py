@@ -20,7 +20,7 @@ game_over = False
 while not game_over:
     guess = input('Guess a letter?\n').lower()
     for position in range(len(secret_word)):
-        letter = secret_word[position]
+        letter = secret_word[position] 
         if letter == guess:
             display_word[position] = letter
     if guess not in secret_word:
