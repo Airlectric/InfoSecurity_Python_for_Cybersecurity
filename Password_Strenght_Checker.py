@@ -14,16 +14,18 @@ def is_strong_password(password):
         return False
 
     # Check for at least one special character
-    special_character = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
-    if not special_characters.search(password):
+    special_character = re.compile('[@_!#$%^&*()<>?/|}{~:]')
+    if not special_character.search(password):
         return False
 
     return True
 
 
-    # Tesst the password strength
-    user_password = input('Enter your password')
-    if is_strong_password(user_password):
-        print('Password is strong')
-    else:
-        print('Password is not strong , Please follow the criteria.')
+# Tesst the password strength
+user_password = input('Enter your password')
+if is_strong_password(user_password):
+     print('Password is strong')
+else:
+    print('Password is not strong , Please follow the criteria.')
+
+    
